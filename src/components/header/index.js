@@ -27,7 +27,7 @@ const Index = ({ account, loadWeb3, loadWalleConnect }) => {
             </li>
             <li className="p-3.5 text-sm">
               <a
-                href="https://www.dextools.io/app/bsc/pair-explorer/0xd718ae747c491cd00380b27ad0ad0c60394958c2"
+                href="https://www.dextools.io/app/bsc/pair-explorer/0xca1ec90bd4c5665e85b93f1696cc1907bf53a6a9"
                 target="_blank"
                 rel="noreferrer"
               >
