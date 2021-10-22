@@ -146,7 +146,7 @@ function App() {
     // you are connected to main net
     // Please connect to main net
 
-    if (chainId === 97) {
+    if (chainId === 56) {
       toast(`You are connected to main net`, {
         type: "success",
         position: toast.POSITION.BOTTOM_CENTER,
@@ -243,7 +243,7 @@ function App() {
 
   async function buy(buyAmount) {
     if (contract) {
-      if (chainId === 97) {
+      if (chainId === 56) {
         if (buyAmount === 0) {
           setLessValueWarn(true);
         } else {
