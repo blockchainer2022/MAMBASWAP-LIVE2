@@ -25,7 +25,7 @@ const Home = ({
         const { data } = await axios.get(
           "https://defi.mobiwebsolutionz.com/api/mamba/get-ico-details.php"
         );
-        console.log(data.data);
+        // console.log(data.data);
         setData(data.data);
       } catch (error) {
         console.log(error);
