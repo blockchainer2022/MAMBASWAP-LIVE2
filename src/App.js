@@ -157,23 +157,23 @@ function App() {
       // const finalTotalSupply = window.web3.utils.fromWei(totalsupply, "ether");
       // console.log("totalSupply:", totalsupply);
       setTotalSupply(totalsupply);
-      console.log("total supply", totalsupply / 1000000000);
+      // console.log("total supply", totalsupply / 1000000000);
 
       const price = await contract.methods.ICOPrice().call();
       setPrice(price / 1000000000);
-      console.log("Icoprice:", price / 1000000000);
+      // console.log("Icoprice:", price / 1000000000);
       const endTime = await contract.methods.endTime().call();
-      console.log("endTime:", endTime);
+      // console.log("endTime:", endTime);
       const startTime = await contract.methods.startTime().call();
-      console.log("Start time:", startTime);
+      // console.log("Start time:", startTime);
       const ICOtarget = await contract.methods.ICOTarget().call();
-      console.log("IcoTARGET:", ICOtarget / 1000000000);
+      // console.log("IcoTARGET:", ICOtarget / 1000000000);
       // const convertedICOPrice = Web3.utils.fromWei(price);
       setIcoPrice(price / 1000000000);
       // console.log("icoprice:", convertedICOPrice);
       const tokensold = await contract.methods.tokenSold().call();
       // const finalTokenSold = window.web3.utils.fromWei(tokensold, "ether");
-      console.log("tokenSold:", tokensold);
+      // console.log("tokenSold:", tokensold);
       setTokenSold(tokensold);
       const postTokens = async () => {
         try {
@@ -198,12 +198,7 @@ function App() {
       const tokenBalance = await contract.methods
         .getUserTokenBalance()
         .call({ from: account });
-      // console.log("User Token Balance without convert:", tokenBalance);
 
-      // const finalTokenBalance = await window.web3.utils.fromWei(
-      //   tokenBalance,
-      //   "ether"
-      // );
       setUserTokenBalance(tokenBalance / 100);
       console.log("User Token Balance:", tokenBalance);
     } else {
@@ -248,22 +243,26 @@ function App() {
           setLessValueWarn(true);
         } else {
           setConfirmTransaction(true);
-          //const finalPrice = Number(price) * buyAmount;
 
           const finalPrice = window.web3.utils.toWei(
             buyAmount.toString(),
             "ether"
           );
-          console.log("finalPrice:", finalPrice);
+          // console.log("finalPrice:", finalPrice);
+          await contract.methods.buy().estimateGas(
+            {
+              from: account,
+              value: finalPrice,
+            },
+            function (error, estimatedGas) {
+              console.log("estimatedGas:", estimatedGas);
+            }
+          );
 
           await contract.methods
             .buy()
             .send({ from: account, value: finalPrice })
             .on("transactionHash", function () {
-              // swal({
-              //   title: "Minting NFT!",
-              //   icon: "info",
-              // });
               setConfirmTransaction(false);
               setMintingInProgress(true);
             })
