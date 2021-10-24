@@ -249,15 +249,15 @@ function App() {
             "ether"
           );
           // console.log("finalPrice:", finalPrice);
-          await contract.methods.buy().estimateGas(
-            {
-              from: account,
-              value: finalPrice,
-            },
-            function (error, estimatedGas) {
-              console.log("estimatedGas:", estimatedGas);
-            }
-          );
+          // await contract.methods.buy().estimateGas(
+          //   {
+          //     from: account,
+          //     value: finalPrice,
+          //   },
+          //   function (error, estimatedGas) {
+          //     console.log("estimatedGas:", estimatedGas);
+          //   }
+          // );
 
           await contract.methods
             .buy()
