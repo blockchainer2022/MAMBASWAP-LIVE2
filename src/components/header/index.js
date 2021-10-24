@@ -27,11 +27,11 @@ const Index = ({ account, loadWeb3, loadWalleConnect }) => {
             </li>
             <li className="p-3.5 text-sm">
               <a
-                href="https://www.dextools.io/app/bsc/pair-explorer/0xca1ec90bd4c5665e85b93f1696cc1907bf53a6a9"
+                href="https://bscscan.com/address/0x0cce692e4df6b413084d5ce6d6140fefcb3bc325#code"
                 target="_blank"
                 rel="noreferrer"
               >
-                Price Chart
+                ICO Contract
               </a>
             </li>
             <li className="p-3.5 text-sm">
