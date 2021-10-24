@@ -178,7 +178,7 @@ function App() {
       const postTokens = async () => {
         try {
           const response = await axios.post(
-            "https://defi.mobiwebsolutionz.com/api/mamba/update-testnet.php",
+            "https://defi.mobiwebsolutionz.com/api/mamba/update.php",
             {
               startTime: startTime,
               endTime: endTime,
