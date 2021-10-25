@@ -185,7 +185,7 @@ function App() {
               ICOprice: price / 1000000000,
               ICOtarget: ICOtarget / 1000000000,
               total_supply: totalsupply / 1000000000,
-              total_sold: tokensold,
+              total_sold: tokensold / 1000000000,
             }
           );
           console.log(response);
